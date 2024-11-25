@@ -1,0 +1,97 @@
+.qr {
+  padding-top: toRem(15);
+  padding-bottom: toRem(30);
+  &__container {
+    max-width: toRem(400);
+  }
+
+  &__title {
+    font-size: toRem(30);
+    color: #1f1f1f;
+    text-transform: none;
+    font-weight: 700;
+
+    margin-bottom: toRem(30);
+  }
+
+  &__camera {
+    margin-bottom: toRem(15);
+  }
+
+  &__buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: toRem(8);
+  }
+
+  &__link {
+    border-radius: 12px;
+    background-color: #fff;
+
+    padding: toRem(12);
+  }
+
+  &__link-ico {
+    background: rgba(1, 69, 143, 0.17);
+    border-radius: 6px;
+    width: toRem(54);
+    height: toRem(54);
+    color: #01458f;
+    font-size: toRem(27);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: toRem(50);
+  }
+
+  &__link-title {
+    font-family: "Myriad Pro";
+    font-weight: 400;
+    font-size: toRem(16);
+    line-height: 125%;
+    color: #1a2026;
+  }
+}
+
+.camera {
+  &__content {
+    width: 100%;
+    background: #1a2026;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff;
+    aspect-ratio: 328 / 305;
+  }
+
+  &__icon {
+    font-size: toRem(112);
+    margin-bottom: toRem(30);
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+  }
+}
+
+//========================================================================================================================================================
+
+.edit {
+  padding-top: toRem(15);
+  padding-bottom: toRem(30);
+  &__container {
+    max-width: toRem(400);
+  }
+
+  &__form {
+    .input {
+      background-color: #fff;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Главная"
+})
+
+<body>
+    <div class="wrapper">
+        <main class="page">
+
+            <div class="page-top">
+                <div class="page-top__container">
+                    <a href="#" class="page-top__back _icon-back"></a>
+                </div>
+            </div>
+
+
+
+            <section class="qr">
+                <div class="qr__container">
+
+                    <h1 class="qr__title title">Наведите камеру на QR-код в чеке</h1>
+                    <div class="qr__camera">
+                        <button type="button" class="camera__content">
+                            <div class="camera__icon _icon-qr"></div>
+                            <div class="camera__text">Включить камеру</div>
+                        </button>
+                    </div>
+                    <div class="qr__buttons">
+                        <a href="#" class="qr__link">
+                            <div class="qr__link-ico _icon-edit"></div>
+                            <div class="qr__link-title">Ввести данные вручную</div>
+                        </a>
+                        <a href="#" class="qr__link">
+                            <div class="qr__link-ico _icon-qr"></div>
+                            <div class="qr__link-title">Загрузить чек</div>
+                        </a>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+        @@include('html/_popup.htm',{})
+    </div>
+    @@include('html/_js.htm',{})
+</body>
+
+</html>

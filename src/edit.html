@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Главная"
+})
+
+<body>
+    <div class="wrapper">
+        <main class="page">
+
+            <div class="page-top">
+                <div class="page-top__container">
+                    <a href="#" class="page-top__back _icon-back"></a>
+                </div>
+            </div>
+
+
+
+            <section class="edit">
+                <div class="edit__container">
+
+                    <h1 class="qr__title title">Наведите камеру на QR-код в чеке</h1>
+
+                    <form action="#" class="edit__form form">
+                        <label class="form__label">
+                            <div class="form__title">Дата и время чека</div>
+                            <input autocomplete="off" type="date" name="form[]" placeholder="0000" class="form__input input">
+                        </label>
+                        <label class="form__label">
+                            <div class="form__title">ФН</div>
+                            <input autocomplete="off" type="text" name="form[]" placeholder="0000" class="form__input input">
+                        </label>
+                        <label class="form__label">
+                            <div class="form__title">ФМ</div>
+                            <input autocomplete="off" type="text" name="form[]" placeholder="0000" class="form__input input">
+                        </label>
+                        <label class="form__label">
+                            <div class="form__title">ФБ</div>
+                            <input autocomplete="off" type="text" name="form[]" placeholder="0000" class="form__input input">
+                        </label>
+
+                        <div class="form__bottom">
+                            <button class="form__button button">Отправить</button>
+                        </div>
+                    </form>
+
+                </div>
+            </section>
+
+        </main>
+        @@include('html/_popup.htm',{})
+    </div>
+    @@include('html/_js.htm',{})
+</body>
+
+</html>

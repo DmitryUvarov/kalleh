@@ -61,4 +61,12 @@ function pageLoad() {
       }
     })
   }
+  /////////////
+
+  const dateInput = document.querySelector('input[type="date"]')
+  if (dateInput) {
+    dateInput.addEventListener("focus", () => {
+      dateInput.showPicker()
+    })
+  }
 }
