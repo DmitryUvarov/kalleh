@@ -37,9 +37,6 @@ textarea {
   &::placeholder {
     transition: opacity 0.3s;
   }
-  &:focus::placeholder {
-    opacity: 0;
-  }
 }
 
 textarea.input {
