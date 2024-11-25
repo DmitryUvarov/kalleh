@@ -14,6 +14,13 @@
 				<div class="hero__container">
 					<div class="hero__body">
 						<h1 class="hero__title">Покупайте Kalleh <br> и участвуйте в акции!</h1>
+
+						<button class="button" data-popup="#login">Логин</button>
+						<button class="button" data-popup="#loginPhoneStep1">Получить код</button>
+						<button class="button" data-popup="#loginPhoneStep2">Отправить код</button>
+						<button class="button" data-popup="#logout">Выйти</button>
+						<button class="button" data-popup="#qr">QR Code</button>
+
 					</div>
 				</div>
 			</section>
@@ -182,7 +189,7 @@
 			<section class="faq">
 				<div class="faq__container">
 					<h2 class="faq__title title">вопросы и ответы</h2>
-					<div data-spollers class="faq__spollers spollers">
+					<div data-spollers data-one-spoller class="faq__spollers spollers">
 						<div class="spollers__item">
 							<button type="button" data-spoller class="spollers__title"><span>Кто является организатором акции?</span></button>
 							<div class="spollers__body">В Акции могут принять участие дееспособные физические лица в возрасте от 18 лет и старше: граждане Узбекистана и иностранные граждане, имеющие вид на жительство или постоянно проживающие на территории Узбекистана.</div>
@@ -267,7 +274,7 @@
 			-->
 
 		</main>
-
+		@@include('html/_popup.htm',{})
 	</div>
 	@@include('html/_js.htm',{})
 </body>

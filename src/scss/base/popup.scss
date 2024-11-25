@@ -1,61 +1,208 @@
 body::after {
-	content: "";
-	background-color: rgba(0, 0, 0, 0.5);
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	opacity: 0;
-	transition: opacity 0.8s ease 0s;
-	pointer-events: none;
-	z-index: 149;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.92);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease 0s;
+  pointer-events: none;
+  z-index: 149;
 }
 .popup-show body::after {
-	opacity: 1;
+  opacity: 1;
 }
 .popup {
-	position: fixed;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	padding: 30px 10px;
-	transition: visibility 0.8s ease 0s;
-	visibility: hidden;
-	pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: toRem(30) toRem(15);
+  transition: visibility 0.8s ease 0s;
+  visibility: hidden;
+  pointer-events: none;
 }
 .popup_show {
-	z-index: 150;
-	visibility: visible;
-	overflow: auto;
-	pointer-events: auto;
+  z-index: 150;
+  visibility: visible;
+  overflow: auto;
+  pointer-events: auto;
 }
 .popup_show .popup__content {
-	visibility: visible;
-	transform: scale(1);
+  visibility: visible;
+  transform: scale(1);
 }
 .popup__wrapper {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	min-height: 100%;
-	flex: 1 1 auto;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
+  flex: 1 1 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .popup__content {
-	visibility: hidden;
-	transform: scale(0);
-	transition: transform 0.3s ease 0s;
-	background-color: #eee;
-	padding: 20px;
-	width: 100%;
-	max-width: 900px;
-	border-radius: 20px;
-	.lock & {
-		visibility: visible;
-	}
+  visibility: hidden;
+  transform: scale(0);
+  transition: transform 0.3s ease 0s;
+  background-color: #f8f8f8;
+  @include adaptiveValue("padding-top", 45, 50);
+  @include adaptiveValue("padding-bottom", 70, 35);
+  @include adaptiveValue("padding-left", 45, 15, 0, 1105, 767);
+  @include adaptiveValue("padding-right", 45, 15, 0, 1105, 767);
+  width: 100%;
+  max-width: toRem(470);
+  border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  .lock & {
+    visibility: visible;
+  }
+}
+
+//========================================================================================================================================================
+
+.popup {
+  &__close {
+    color: #d9d9d9;
+    font-size: toRem(27);
+
+    position: absolute;
+    top: toRem(22);
+    right: toRem(28);
+
+    transition: color 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: #111315;
+      }
+    }
+  }
+
+  &__top {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 40, 20);
+    }
+  }
+
+  &__title {
+    &.title {
+      text-align: center;
+      text-transform: none;
+      &:not(:last-child) {
+        margin-bottom: toRem(10);
+      }
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    @include adaptiveValue("font-size", 18, 16);
+    line-height: 144%;
+    text-align: center;
+    color: #1a2026;
+  }
+
+  &__items {
+    display: grid;
+    gap: toRem(12);
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #fff;
+    border-radius: 12px;
+  }
+
+  &__item {
+    padding: toRem(30) toRem(10);
+    border-radius: toRem(12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: toRem(23);
+
+    font-weight: 500;
+    @include adaptiveValue("font-size", 20, 18);
+    line-height: 130%;
+    color: #1a2026;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: border-color 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        border-color: #01519b;
+      }
+    }
+
+    &::before {
+      width: toRem(73);
+      height: toRem(73);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #01519b;
+      @include adaptiveValue("font-size", 55, 45);
+    }
+  }
+
+  &__form {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: toRem(15);
+  }
+
+  &__button {
+    &.button {
+      min-width: toRem(115);
+      border-radius: 30px;
+      min-height: toRem(55);
+    }
+  }
+
+  &__no {
+    padding: toRem(5) 0;
+    font-weight: 400;
+    font-size: toRem(18);
+    line-height: 144%;
+    color: #6e6e6e;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #111315;
+      }
+    }
+  }
+
+  &__qr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__qr-icon {
+    font-size: toRem(100);
+    color: #01458f;
+    margin-bottom: toRem(35);
+  }
+
+  &__qr-title {
+    font-weight: 700;
+    font-size: toRem(25);
+    line-height: 160%;
+    text-align: center;
+    color: #111315;
+  }
 }

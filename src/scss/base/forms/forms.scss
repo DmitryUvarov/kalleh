@@ -1,19 +1,51 @@
 //<FORM>
 // Сніппет (HTML):
 .form {
-  &__row {
+  &__label {
+    display: block;
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 30, 20);
+    }
   }
-  &__column {
+
+  &__title {
+    font-weight: 400;
+    font-size: toRem(16);
+    line-height: 120%;
+    color: #8e8e8e;
+    margin-bottom: toRem(10);
   }
-  &__line {
-  }
+
   &__input {
   }
-  &__button {
+
+  &__bottom {
+    display: grid;
+    gap: toRem(15);
   }
-  &__error {
+
+  &__button {
+    &.button {
+      border-radius: 30px;
+      min-height: toRem(55);
+    }
+  }
+
+  &__resend {
+    padding: toRem(5) 0;
+    font-weight: 400;
+    font-size: toRem(18);
+    line-height: 144%;
+    color: #6e6e6e;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #111315;
+      }
+    }
   }
 }
+
 //</FORM>
 
 // <BUTTONS>
@@ -22,7 +54,7 @@
 
 // <INPUTS>
 // Сніппет (HTML): inp
-// @import "input";
+@import "input";
 
 // <CHECK>
 // Сніппет (HTML): chk

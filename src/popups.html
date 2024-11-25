@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Главная"
+})
+
+<body>
+	<div class="wrapper">
+		<main class="page">
+
+			<section class="hero">
+				<div class="hero__container">
+					<button style="margin: 5px;" class="button" data-popup="#login">Логин</button>
+					<button style="margin: 5px;" class="button" data-popup="#loginPhoneStep1">Получить код</button>
+					<button style="margin: 5px;" class="button" data-popup="#loginPhoneStep2">Отправить код</button>
+					<button style="margin: 5px;" class="button" data-popup="#logout">Выйти</button>
+					<button style="margin: 5px;" class="button" data-popup="#qr">QR Code</button>
+				</div>
+			</section>
+
+		</main>
+		@@include('html/_popup.htm',{})
+	</div>
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

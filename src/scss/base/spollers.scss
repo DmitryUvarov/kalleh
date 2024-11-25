@@ -63,6 +63,17 @@
       transition: transform 0.5s ease 0s;
     }
 
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #01458f;
+        color: #fff;
+
+        &::after {
+          color: #fff;
+        }
+      }
+    }
+
     &._spoller-active {
       background-color: #01458f;
       color: #fff;
