@@ -20,7 +20,7 @@ textarea {
   color: #1f1f1f;
 
   min-height: toRem(54);
-  background-color: #f8f8f8;
+  background-color: #fff;
   border: 1px solid #fff;
 
   &:focus {
@@ -45,4 +45,11 @@ textarea {
 textarea.input {
   resize: none;
   padding: 0px 0px;
+}
+
+input[type="date"] {
+  -webkit-appearance: none; /* Убирает стили Safari */
+  appearance: none; /* Универсальный сброс */
+  width: 100%; /* Растягивает поле */
+  min-width: 0;
 }

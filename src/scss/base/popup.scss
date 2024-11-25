@@ -114,11 +114,11 @@ body::after {
     display: grid;
     gap: toRem(12);
     grid-template-columns: repeat(2, 1fr);
-    background-color: #fff;
-    border-radius: 12px;
   }
 
   &__item {
+    border-radius: 12px;
+    background-color: #fff;
     padding: toRem(30) toRem(10);
     border-radius: toRem(12);
     display: flex;
