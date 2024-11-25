@@ -52,4 +52,6 @@ input[type="date"] {
   appearance: none; /* Универсальный сброс */
   width: 100%; /* Растягивает поле */
   min-width: 0;
+  text-align: left;
+  padding: 0px 20px;
 }
