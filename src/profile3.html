@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Главная"
+})
+
+<body>
+    <div class="wrapper">
+        @@include('html/_header.htm',{})
+        <main class="page">
+
+            <div class="page-top">
+                <div class="page-top__container">
+                    <div class="page-top__breadcrumbs breadcrumbs">
+                        <ul class="breadcrumbs__list">
+                            <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Главная</a></li>
+                            <li class="breadcrumbs__item"><span class="breadcrumbs__current">Профиль</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <section class="profile">
+                <div class="profile__container">
+
+                    <div class="profile__aside aside-profile">
+                        <a href="#" class="aside-profile__link _icon-user">Персональные данные</a>
+                        <a href="#" class="aside-profile__link _icon-qr">Чеки</a>
+                        <a href="#" class="aside-profile__link active _icon-present">Призы</a>
+                        <a href="#" class="aside-profile__link _icon-logout">Выйти</a>
+                    </div>
+
+                    <div class="profile__body">
+                        <h1 class="profile__title title title_dark">Заказы призов</h1>
+                        <div class="profile__wrapper">
+
+                            <div class="profile__present present-profile">
+                                <div class="present-profile__item">
+                                    <div class="present-profile__content">
+                                        <div class="present-profile__title">Ваучеры Kalleh на покупки</div>
+                                        <div class="present-profile__num">№ 18224</div>
+                                        <div class="present-profile__status">Подтвержден</div>
+                                        <!-- add .reject class -->
+                                    </div>
+                                    <div class="present-profile__image"><img src="@img/present-profile/01.png" alt="" loading="lazy"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+        @@include('html/_popup.htm',{})
+    </div>
+    @@include('html/_js.htm',{})
+</body>
+
+</html>

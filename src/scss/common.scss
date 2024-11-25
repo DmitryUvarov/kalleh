@@ -16,6 +16,57 @@
 
 //========================================================================================================================================================
 
+.breadcrumbs {
+  white-space: nowrap;
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    font-family: "Myriad Pro";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 144%;
+    color: #6e6e6e;
+  }
+
+  &__link {
+    position: relative;
+    transition: all 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #000;
+
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+
+    &::after {
+      content: "/";
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: toRem(2);
+      left: 0;
+      width: calc(100% - 5px);
+      height: 1px;
+      background-color: #000;
+      opacity: 0;
+      transition: all 0.3s ease 0s;
+    }
+  }
+
+  &__current {
+  }
+}
+
+//========================================================================================================================================================
+
 // .fancybox__container {
 //     max-width: none;
 // }

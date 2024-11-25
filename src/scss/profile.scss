@@ -1,0 +1,354 @@
+.page-top {
+  padding-top: toRem(10);
+  padding-bottom: toRem(10);
+  &__container {
+  }
+
+  &__breadcrumbs {
+  }
+}
+
+//========================================================================================================================================================
+
+.profile {
+  padding-top: toRem(10);
+  @include adaptiveValue("padding-bottom", 50, 30);
+  &__container {
+    display: flex;
+    @include adaptiveValue("gap", 25, 16);
+    align-items: flex-start;
+
+    @media (max-width: $tablet) {
+      flex-direction: column;
+    }
+  }
+
+  &__aside {
+    @media (min-width: $tablet) {
+      flex: 0 0 toRem(243);
+    }
+    @media (max-width: $tablet) {
+      width: 100%;
+    }
+  }
+
+  &__body {
+    @media (min-width: $tablet) {
+      flex: 1 1 auto;
+    }
+    @media (max-width: $tablet) {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    text-transform: none;
+    @include adaptiveValue("font-size", 38, 24);
+    &:not(:last-child) {
+      margin-bottom: toRem(25);
+    }
+
+    @media (max-width: $mobile) {
+      font-family: "Myriad Pro";
+    }
+  }
+
+  &__wrapper {
+    border-radius: 30px;
+    box-shadow: 0 1px 19px 0 rgba(0, 0, 0, 0.08);
+    background: #fff;
+
+    padding: toRem(30) toRem(20);
+  }
+
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: toRem(14);
+    row-gap: toRem(20);
+
+    .form__label {
+      flex: 1 0 calc(50% - toRem(7));
+      &:not(:last-child) {
+        margin-bottom: toRem(0);
+      }
+
+      @media (max-width: $mobile) {
+        flex: 1 1 100%;
+      }
+    }
+    .form__bottom {
+      margin-left: auto;
+      min-width: toRem(245);
+    }
+  }
+
+  &__tabs {
+  }
+
+  &__present {
+  }
+}
+
+.present-profile {
+  display: grid;
+  gap: toRem(25);
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    gap: toRem(20);
+
+    @media (max-width: em(660)) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-weight: 600;
+    @include adaptiveValue("font-size", 24, 20);
+    line-height: 108%;
+    color: #1a2026;
+
+    &:not(:last-child) {
+      margin-bottom: toRem(10);
+    }
+  }
+
+  &__num {
+    font-family: "Myriad Pro";
+    font-weight: 400;
+    @include adaptiveValue("font-size", 18, 16);
+    line-height: 144%;
+    color: #1a2026;
+    &:not(:last-child) {
+      margin-bottom: toRem(20);
+    }
+  }
+
+  &__status {
+    margin-top: auto;
+    font-family: "Myriad Pro";
+    font-weight: 400;
+    @include adaptiveValue("font-size", 18, 16);
+    line-height: 144%;
+    color: #01458f;
+
+    border: 1px solid #01458f;
+    border-radius: 30px;
+    min-height: 30px;
+    padding: toRem(2) toRem(20);
+    align-self: flex-start;
+
+    &.reject {
+      border-color: #cc1532;
+      color: #cc1532;
+    }
+  }
+
+  &__image {
+    @media (min-width: em(660)) {
+      flex: 0 0 percent(230, 767);
+    }
+    @media (max-width: em(660)) {
+      display: flex;
+      justify-content: center;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+.tabs {
+  &__navigation {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    @include adaptiveValue("gap", 40, 6);
+
+    padding-bottom: toRem(15);
+    margin-bottom: toRem(15);
+    border-bottom: 1px solid rgba(220, 220, 220, 0.74);
+  }
+
+  &__title {
+    padding: toRem(5);
+    border-radius: toRem(6);
+
+    font-weight: 600;
+    font-size: toRem(18);
+    line-height: 144%;
+    color: #6e6e6e;
+    display: flex;
+    align-items: center;
+    gap: toRem(8);
+
+    @media (max-width: $mobile) {
+      background-color: #fff;
+      padding: toRem(4) toRem(18);
+      border: 1px solid rgba(220, 220, 220, 0.74);
+    }
+
+    transition: color 0.3s ease;
+    @media (any-hover: hover) {
+      &:hover {
+        color: #01458f;
+      }
+    }
+
+    span {
+      font-family: "Myriad Pro";
+      font-weight: 600;
+      font-size: toRem(18);
+      line-height: 144%;
+      color: #fff;
+      background-color: #00953b;
+
+      width: toRem(20);
+      height: toRem(20);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border-radius: 50%;
+    }
+
+    &.active {
+      color: #01458f;
+      border-color: #01458f;
+    }
+    &.reject {
+      span {
+        background-color: #cc1532;
+      }
+    }
+  }
+
+  &__content {
+  }
+
+  &__line {
+    &:not(:last-child) {
+      margin-bottom: toRem(18);
+    }
+  }
+}
+
+.line-tab {
+  font-family: "Myriad Pro";
+  font-weight: 400;
+  font-size: 18px;
+  color: #1f1f1f;
+
+  display: flex;
+  align-items: center;
+
+  @include adaptiveValue("gap", 60, 15);
+  &__count {
+    @media (max-width: $mobile) {
+      display: none;
+    }
+  }
+
+  &__dates {
+    display: flex;
+    align-items: center;
+    @include adaptiveValue("gap", 60, 10, 0, 1105, 767);
+
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
+  }
+
+  &__date {
+    @media (max-width: $mobile) {
+      font-weight: 700;
+    }
+    &:last-child {
+      color: #6e6e6e;
+      @media (max-width: $mobile) {
+        font-weight: 500;
+      }
+    }
+  }
+
+  &__status {
+    border-radius: 30px;
+    height: toRem(34);
+    background: #00953b;
+    font-weight: 400;
+    font-size: toRem(18);
+    line-height: 144%;
+    color: #fff;
+    padding: toRem(4) toRem(15);
+    min-width: toRem(120);
+    text-align: center;
+
+    &.reject {
+      background-color: #cc1532;
+    }
+
+    @media (max-width: $mobile) {
+      margin-left: auto;
+    }
+  }
+
+  &__link {
+    min-height: toRem(34);
+    padding: toRem(2) toRem(15);
+    margin-left: auto;
+
+    @media (max-width: $mobile) {
+      display: none;
+    }
+  }
+}
+
+.aside-profile {
+  border-radius: 12px;
+  box-shadow: 0 1px 19px 0 rgba(0, 0, 0, 0.08);
+  background: #fff;
+  &__link {
+    padding: toRem(15) toRem(11);
+    font-family: "Myriad Pro";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 144%;
+    color: #6e6e6e;
+    transition: color 0.3s ease 0s;
+
+    display: flex;
+    align-items: center;
+    gap: toRem(10);
+
+    &::before {
+      font-size: toRem(18);
+      width: toRem(18);
+      height: toRem(18);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &.active {
+      color: #01458f;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #01458f;
+      }
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba(220, 220, 220, 0.74);
+    }
+  }
+}

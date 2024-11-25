@@ -43,4 +43,22 @@ function pageLoad() {
     setInterval(updateCounter, 1000)
     updateCounter()
   }
+  const fileInput = document.getElementById("passportPhotoInput")
+
+  if (fileInput) {
+    const fileNameSpan = document.getElementById("fileName")
+
+    fileInput.addEventListener("change", function () {
+      const file = fileInput.files[0]
+      if (file) {
+        if (file.type.startsWith("image/")) {
+          fileNameSpan.textContent = file.name
+        } else {
+          alert("Пожалуйста, выберите файл изображения!")
+          fileInput.value = ""
+          fileNameSpan.textContent = "passport.png"
+        }
+      }
+    })
+  }
 }
