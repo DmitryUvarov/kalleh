@@ -12,11 +12,11 @@ function pageLoad() {
 
   if (counter) {
     const timeTo = counter.getAttribute("data-timeTo")
-    const targetDate = new Date(timeTo) // Преобразуем строку в дату
 
-    // Проверяем корректность целевой даты
-    if (isNaN(targetDate)) {
-      console.error("Invalid date format in data-timeTo attribute. Use YYYY-MM-DD.")
+    const targetDate = new Date(timeTo)
+
+    if (isNaN(targetDate.getTime())) {
+      console.error("Invalid date format. Use ISO format: YYYY-MM-DDTHH:mm:ss")
       return
     }
 
@@ -25,7 +25,6 @@ function pageLoad() {
       const diff = targetDate - now
 
       if (diff <= 0) {
-        // Если время истекло
         document.getElementById("days").textContent = 0
         document.getElementById("hours").textContent = 0
         document.getElementById("minutes").textContent = 0
