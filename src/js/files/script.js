@@ -65,6 +65,9 @@ function pageLoad() {
 
   const dateInput = document.querySelector('input[type="date"]')
   if (dateInput) {
+    const today = new Date().toISOString().split("T")[0] // Получаем дату в формате YYYY-MM-DD
+    dateInput.value = today // Устанавливаем значение
+
     dateInput.addEventListener("focus", () => {
       dateInput.showPicker()
     })
