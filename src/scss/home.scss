@@ -1,3 +1,52 @@
 //====================================================================================================
 
+.hero {
+  position: relative;
+  &__bg-ibg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.35);
+      z-index: 1;
+
+      @media (min-width: $mobile) {
+        display: none;
+      }
+    }
+  }
+
+  &__container {
+    padding-top: toRem(50);
+    padding-bottom: toRem(50);
+    min-height: toRem(565);
+  }
+
+  &__body {
+  }
+
+  &__title {
+    font-weight: 900;
+    @include adaptiveValue("font-size", 33, 28);
+    line-height: 152%;
+    text-transform: uppercase;
+    color: #1a2026;
+
+    @media (max-width: $mobile) {
+      text-align: center;
+      color: #fff;
+    }
+  }
+}
+
 //====================================================================================================
