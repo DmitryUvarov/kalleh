@@ -28,114 +28,113 @@ import "../../scss/base/swiper.scss"
 function initSliders() {
   // Список слайдерів
   // Перевіряємо, чи є слайдер на сторінці
-  if (document.querySelector(".name__slider")) {
-    new Swiper(".name__slider", {
-      modules: [],
+  // if (document.querySelector(".name__slider")) {
+  //   new Swiper(".name__slider", {
+  //     modules: [],
+  //     observer: true,
+  //     observeParents: true,
+  //     slidesPerView: 1,
+  //     spaceBetween: 0,
+  //     autoHeight: true,
+  //     speed: 800,
+
+  //   lazyPreloaderClass: "preloader",
+
+  //   // Ефекти
+  //   effect: "fade",
+  //   autoplay: {
+  //     delay: 3000,
+  //     disableOnInteraction: false,
+  //   },
+
+  //   pagination: {
+  //     el: ".test__slider .pagination",
+  //     clickable: true,
+  //   },
+  //   pagination: {
+  //     type: "fraction",
+  //     el: ".test__slider .fraction",
+  //     currentClass: "fraction__current",
+  //     totalClass: "fraction__total",
+  //   },
+
+  //   // Скроллбар
+  //   scrollbar: {
+  //     el: ".test__slider .slider-scrollbar",
+  //     dragClass: "slider-scrollbar__drag",
+  //     draggable: true,
+  //   },
+
+  //   navigation: {
+  //     prevEl: ".test__slider .button-prev",
+  //     nextEl: ".test__slider .button-next",
+  //   },
+
+  // breakpoints: {
+  // 	640: {
+  // 		slidesPerView: 1,
+  // 		spaceBetween: 0,
+  // 		autoHeight: true,
+  // 	},
+  // 	768: {
+  // 		slidesPerView: 2,
+  // 		spaceBetween: 20,
+  // 	},
+  // 	992: {
+  // 		slidesPerView: 3,
+  // 		spaceBetween: 20,
+  // 	},
+  // 	1268: {
+  // 		slidesPerView: 4,
+  // 		spaceBetween: 30,
+  // 	},
+  // },
+
+  // Події
+  //   on: {},
+  //   })
+  // }
+
+  if (document.querySelector(".products__slider")) {
+    new Swiper(".products__slider", {
+      modules: [Navigation],
       observer: true,
       observeParents: true,
-      slidesPerView: 1,
-      spaceBetween: 0,
-      //autoHeight: true,
-      speed: 800,
+      speed: 500,
+      loop: true,
 
-      //   lazyPreloaderClass: "preloader",
+      navigation: {
+        prevEl: ".products .button-prev",
+        nextEl: ".products .button-next",
+      },
 
-      //   // Ефекти
-      //   effect: "fade",
-      //   autoplay: {
-      //     delay: 3000,
-      //     disableOnInteraction: false,
-      //   },
-
-      //   pagination: {
-      //     el: ".test__slider .pagination",
-      //     clickable: true,
-      //   },
-      //   pagination: {
-      //     type: "fraction",
-      //     el: ".test__slider .fraction",
-      //     currentClass: "fraction__current",
-      //     totalClass: "fraction__total",
-      //   },
-
-      //   // Скроллбар
-      //   scrollbar: {
-      //     el: ".test__slider .slider-scrollbar",
-      //     dragClass: "slider-scrollbar__drag",
-      //     draggable: true,
-      //   },
-
-      //   navigation: {
-      //     prevEl: ".test__slider .button-prev",
-      //     nextEl: ".test__slider .button-next",
-      //   },
-
-      // breakpoints: {
-      // 	640: {
-      // 		slidesPerView: 1,
-      // 		spaceBetween: 0,
-      // 		autoHeight: true,
-      // 	},
-      // 	768: {
-      // 		slidesPerView: 2,
-      // 		spaceBetween: 20,
-      // 	},
-      // 	992: {
-      // 		slidesPerView: 3,
-      // 		spaceBetween: 20,
-      // 	},
-      // 	1268: {
-      // 		slidesPerView: 4,
-      // 		spaceBetween: 30,
-      // 	},
-      // },
-
-      // Події
-      //   on: {},
-    })
-  }
-
-  if (document.querySelector(".name__slider")) {
-    new Swiper(".name__slider", {
-      modules: [],
-      observer: true,
-      observeParents: true,
-      slidesPerView: 1,
-      spaceBetween: 0,
-      //autoHeight: true,
-      speed: 800,
-
-      // lazyPreloaderClass: 'preloader',
-
-      //   pagination: {
-      //     el: ".test__slider .pagination",
-      //     clickable: true,
-      //   },
-
-      //   navigation: {
-      //     prevEl: ".test__slider .button-prev",
-      //     nextEl: ".test__slider .button-next",
-      //   },
-
-      // breakpoints: {
-      // 	640: {
-      // 		slidesPerView: 1,
-      // 		spaceBetween: 0,
-      // 		autoHeight: true,
-      // 	},
-      // 	768: {
-      // 		slidesPerView: 2,
-      // 		spaceBetween: 20,
-      // 	},
-      // 	992: {
-      // 		slidesPerView: 3,
-      // 		spaceBetween: 20,
-      // 	},
-      // 	1268: {
-      // 		slidesPerView: 4,
-      // 		spaceBetween: 30,
-      // 	},
-      // },
+      breakpoints: {
+        320: {
+          slidesPerView: 1.5,
+          spaceBetween: 20,
+          centeredSlides: true,
+        },
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+          centeredSlides: false,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+          centeredSlides: false,
+        },
+        992: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+          centeredSlides: false,
+        },
+        1105: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+          centeredSlides: false,
+        },
+      },
     })
   }
   /* AUTOPLAY LOGOS SLIDER

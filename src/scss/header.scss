@@ -174,10 +174,12 @@
   }
 
   &__sublist {
+    background-color: #fff;
     @media (min-width: $mobile) {
       position: absolute;
       top: 100%;
-      left: 0;
+      left: -5px;
+      padding: 0 toRem(5);
       width: 100%;
     }
     @media (max-width: $mobile) {

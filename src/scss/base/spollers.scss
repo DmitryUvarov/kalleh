@@ -3,53 +3,81 @@
 
 // Блок зі спойлерами
 .spollers {
-	display: grid;
-	gap: 15px;
+  display: grid;
+  gap: 15px;
+  counter-reset: number;
 }
 // Спойлер
 .spollers__item {
-	font-size: toRem(20);
+  font-size: toRem(20);
 }
 // Заголовок спойлера
 .spollers__title {
-	width: 100%;
-	cursor: default;
-	text-align: left;
-	border: 1px solid #eee;
-	padding: toRem(10) toRem(15);
-	border-radius: toRem(5);
-	position: relative;
-	list-style: none;
-	&::marker {
-	}
-	._spoller-init & {
-		cursor: pointer;
-		&::before,
-		&::after {
-			content: "";
-			position: absolute;
-			right: 10px;
-			top: 50%;
-			background-color: #000;
-			height: 2px;
-			width: 15px;
-			transition: transform 0.5s ease 0s;
-		}
-		&::before {
-			transform: translate(-75%, -50%) rotate(40deg);
-		}
-		&::after {
-			transform: translate(0, -50%) rotate(-40deg);
-		}
-		&._spoller-active {
-			&::before {
-				transform: translateX(-75%) rotate(-40deg);
-			}
-			&::after {
-				transform: rotate(40deg);
-			}
-		}
-		/*
+  width: 100%;
+  cursor: default;
+  text-align: left;
+  padding: toRem(20) toRem(15);
+  border-radius: 12px;
+
+  font-weight: 600;
+  @include adaptiveValue("font-size", 19, 18);
+  line-height: 137%;
+  color: #1a2026;
+
+  background-color: #fff;
+  position: relative;
+  list-style: none;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+
+  display: flex;
+  justify-content: space-between;
+  gap: toRem(10);
+
+  @media (max-width: $mobile) {
+    padding: toRem(10);
+  }
+
+  &::marker {
+  }
+  ._spoller-init & {
+    cursor: pointer;
+
+    .faq & span {
+      &::before {
+        counter-increment: number;
+        content: counter(number) ". ";
+      }
+    }
+
+    &::after {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      content: "\e900";
+      @extend %ic;
+      @include adaptiveValue("font-size", 22, 18);
+      color: #a3a3a3;
+      transition: transform 0.5s ease 0s;
+    }
+
+    &._spoller-active {
+      background-color: #01458f;
+      color: #fff;
+      border-radius: 12px 12px 0 0;
+
+      & ~ .spollers__body {
+        background-color: #01458f;
+      }
+
+      &::after {
+        transform: rotate(180deg);
+        color: #fff;
+      }
+    }
+    /*
 		._spoller-init & {
 			position: relative;
 			width: 100%;
@@ -82,11 +110,17 @@
 			}
 		}
 		*/
-	}
+  }
 }
 // Контент спойлера
 .spollers__body {
-	padding: toRem(20);
-	border-radius: toRem(5);
-	border: 1px solid #eee;
+  padding: toRem(5) toRem(15) toRem(10);
+  border-radius: 0 0 12px 12px;
+  background-color: #fff;
+  font-weight: 400;
+  @include adaptiveValue("font-size", 17, 16);
+  line-height: 153%;
+  color: #fff;
+
+  transition: background-color 0.3s ease;
 }

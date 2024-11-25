@@ -4,7 +4,7 @@
 
 .title {
   font-weight: 800;
-  @include adaptiveValue("font-size", 38, 25);
+  @include adaptiveValue("font-size", 38, 24);
   line-height: 124%;
   text-transform: uppercase;
   color: #fff;
@@ -44,38 +44,39 @@
 //   }
 // }
 
-// .navigation {
-//   display: flex;
-//   justify-content: flex-end;
-//   gap: toRem(5);
+.navigation {
+  display: flex;
+  justify-content: flex-end;
+  gap: toRem(10);
 
-//   &__button {
-//     display: inline-block;
-//     padding: toRem(5);
-//     width: toRem(40);
-//     height: toRem(40);
-//     background-color: #bbb;
+  &__button {
+    display: inline-block;
+    padding: toRem(5);
+    width: toRem(45);
+    height: toRem(45);
+    background-color: #fff;
+    color: #014d97;
+    border-radius: 50%;
 
-//     transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease;
 
-//     @media (any-hover: hover) {
-//       &:not([disabled]):hover {
-//         background-color: #000;
-//         color: #fff;
-//       }
-//     }
+    @media (any-hover: hover) {
+      &:not([disabled]):hover {
+        background-color: #ffd300;
+      }
+    }
 
-//     &.button-prev {
-//     }
-//     &.button-next {
-//     }
+    &.button-prev {
+    }
+    &.button-next {
+    }
 
-//     &[disabled] {
-//       opacity: 0.7;
-//       cursor: no-drop;
-//     }
-//   }
-// }
+    &[disabled] {
+      color: #a3a3a3;
+      cursor: no-drop;
+    }
+  }
+}
 
 // .fraction {
 //   &__current {
