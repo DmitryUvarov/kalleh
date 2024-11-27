@@ -102,6 +102,9 @@
 
   &__item {
   }
+
+  &__decore {
+  }
 }
 .title {
 }
@@ -328,6 +331,9 @@
 
   &__slide {
   }
+
+  &__decore {
+  }
 }
 
 .item-products {
@@ -378,6 +384,7 @@
 .faq {
   @include adaptiveValue("padding-top", 150, 30);
   @include adaptiveValue("padding-bottom", 120, 30);
+  position: relative;
   &__container {
     max-width: toRem(705);
   }
@@ -392,6 +399,9 @@
   }
 
   &__spollers {
+  }
+
+  &__decore {
   }
 }
 
@@ -455,9 +465,11 @@
     max-width: toRem(320);
     width: 100%;
   }
+
+  &__decore {
+  }
 }
-.title {
-}
+
 .counter {
   display: flex;
   justify-content: center;
