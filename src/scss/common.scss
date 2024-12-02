@@ -103,14 +103,17 @@
   display: flex;
   justify-content: flex-end;
   gap: toRem(10);
+  pointer-events: none;
 
   &__button {
+    pointer-events: all;
     display: inline-block;
     padding: toRem(5);
     width: toRem(45);
     height: toRem(45);
     background-color: #fff;
     color: #014d97;
+    border: 1px solid #014d97;
     border-radius: 50%;
 
     transition: background-color 0.3s ease;
