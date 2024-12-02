@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Главная</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20241202165804">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<main class="page">
+
+			<section class="hero">
+				<div class="hero__container">
+					<button style="margin: 5px;" class="button" data-popup="#login">Логин</button>
+					<button style="margin: 5px;" class="button" data-popup="#loginPhoneStep1">Получить код</button>
+					<button style="margin: 5px;" class="button" data-popup="#loginPhoneStep2">Отправить код</button>
+					<button style="margin: 5px;" class="button" data-popup="#logout">Выйти</button>
+					<button style="margin: 5px;" class="button" data-popup="#qr">QR Code</button>
+				</div>
+			</section>
+
+		</main>
+		<!-- используй disabled для кнопок. Я сделал им состояния -->
+		<div id="login" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close _icon-close"></button>
+
+					<div class="popup__top">
+						<div class="popup__title title title_dark">Авторизация</div>
+					</div>
+
+					<div class="popup__items">
+						<a href="#" target="_blank" class="popup__item _icon-telegram">Через чат-бот Telegram</a>
+						<button class="popup__item _icon-phone" data-popup="#loginPhoneStep1">По номеру телефона</button>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div id="loginPhoneStep1" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close _icon-close"></button>
+
+					<div class="popup__top">
+						<div class="popup__title title title_dark">Авторизация</div>
+						<div class="popup__text">Введите номер для получения кода</div>
+					</div>
+
+					<form action="#" class="popup__form form">
+						<label class="form__label">
+							<div class="form__title">Введите номер телефона</div>
+							<input autocomplete="off" type="text" name="form[]" placeholder="+998" value="+998" class="form__input input">
+						</label>
+
+						<div class="form__bottom">
+							<button class="form__button button">Получить код</button>
+							<button class="form__resend">Запросить ещё раз</button>
+						</div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+
+		<div id="loginPhoneStep2" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close _icon-close"></button>
+
+					<div class="popup__top">
+						<div class="popup__title title title_dark">Авторизация</div>
+						<div class="popup__text">Введите код отправленный на номер</div>
+					</div>
+
+					<form action="#" class="popup__form form">
+						<label class="form__label">
+							<div class="form__title">Введите код</div>
+							<input autocomplete="off" type="text" name="form[]" placeholder="0000" class="form__input input">
+						</label>
+
+						<div class="form__bottom">
+							<button class="form__button button">Войти</button>
+							<button class="form__resend">Запросить ещё раз</button>
+						</div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+
+		<div id="logout" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close _icon-close"></button>
+
+					<div class="popup__top">
+						<div class="popup__title title title_dark">Вы хотите выйти?</div>
+					</div>
+
+
+					<div class="popup__buttons">
+						<button class="popup__no">Нет</button>
+						<button class="popup__button button">Да</button>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div id="qr" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close _icon-close"></button>
+					<div class="popup__qr">
+						<div class="popup__qr-icon _icon-checked"></div>
+						<div class="popup__qr-title">QR-код загружен</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20241202165804"></script>
+</body>
+
+</html>

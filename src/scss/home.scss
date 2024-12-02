@@ -55,26 +55,30 @@
   position: relative;
   background: linear-gradient(0, #0172bc 0%, #016fb9 100%);
 
-    &::before{
-      content:'';
-      position: absolute;
-      width: 100%;
-      height: toRem(150);
-      bottom: 100%;
-      left: 0;
-      background-image: url("@img/backgrounds/whawe-blue.svg");
-      background-repeat: repeat-x;
-      background-size: contain;
-      background-position: bottom;
-      z-index: 4;
-    }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: toRem(150);
+    bottom: calc(100% - 1px);
+    left: 0;
+    background-image: url("@img/backgrounds/whawe-blue.svg");
+    background-repeat: repeat-x;
+    background-size: contain;
+    background-position: bottom;
+    z-index: 4;
 
-        &__container {
+    @media (max-width: $pc) {
+      background-size: calc(100% + 2px);
+      background-position: -1px bottom;
+    }
+  }
+
+  &__container {
     @include adaptiveValue("padding-top", 50, 30);
     @include adaptiveValue("padding-bottom", 215, 70);
     position: relative;
     z-index: 2;
-
   }
 
   &__title {
@@ -155,20 +159,24 @@
 
   position: relative;
 
-  &::before{
-    content:'';
+  &::before {
+    content: "";
     position: absolute;
     width: 100%;
     height: toRem(200);
-    bottom: 100%;
+    bottom: calc(100% - 1px);
     left: 0;
-    background-image: url("@img/backgrounds/whawe.png");
+    background-image: url("@img/backgrounds/whawe.svg");
     background-repeat: repeat-x;
     background-size: contain;
     background-position: bottom;
     z-index: 4;
-  }
 
+    @media (max-width: $pc) {
+      background-size: calc(100% + 2px);
+      background-position: -1px bottom;
+    }
+  }
 
   &__container {
   }
@@ -298,24 +306,23 @@
   }
 
   &__navigation {
-@media (min-width:$mobile){
-  position: absolute;
-  width: 100%;
-  justify-content: space-between;
+    @media (min-width: $mobile) {
+      position: absolute;
+      width: 100%;
+      justify-content: space-between;
 
-  top: toRem(92.5);
-}
-@media (max-width:$mobile){
-   justify-content: center;
-   margin-top: toRem(25);
-}
+      top: toRem(92.5);
+    }
+    @media (max-width: $mobile) {
+      justify-content: center;
+      margin-top: toRem(25);
+    }
   }
 
   &__slider {
-
     position: relative;
 
-    @media (min-width:$mobile){
+    @media (min-width: $mobile) {
       overflow: hidden;
     }
   }

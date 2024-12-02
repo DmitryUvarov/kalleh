@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Главная</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20241202165804">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<a href="#" class="header__logo"><picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt="Logo" loading="lazy"></picture></a>
+
+				<div class="header__menu menu">
+					<nav class="menu__body" data-spollers>
+						<ul class="menu__list">
+							<li class="menu__item"><a href="#" class="menu__link">Как участвовать?</a></li>
+							<li class="menu__item"><a href="#" class="menu__link">Призы</a></li>
+							<li class="menu__item"><a href="#" class="menu__link">Вопросы и ответы</a></li>
+							<li class="menu__item"><a href="#" class="menu__link">Победители</a></li>
+							<li class="menu__item">
+								<button type="button" data-spoller class="menu__link">RU</button>
+								<div class="menu__sublist">
+									<a href="#">UZ</a>
+									<a href="#">EN</a>
+								</div>
+							</li>
+						</ul>
+						<a href="#" class="menu__button button button_line">Загрузить чек</a>
+					</nav>
+				</div>
+
+				<div class="header__assets assets-header">
+					<button class="assets-header__login _icon-user">Войти</button>
+					<button type="button" class="header__icon icon-menu"><span></span></button>
+				</div>
+
+
+			</div>
+		</header>
+		<main class="page">
+
+			<div class="page-top">
+				<div class="page-top__container">
+					<div class="page-top__breadcrumbs breadcrumbs">
+						<ul class="breadcrumbs__list">
+							<li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Главная</a></li>
+							<li class="breadcrumbs__item"><span class="breadcrumbs__current">Профиль</span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+
+
+			<section class="profile">
+				<div class="profile__container">
+
+					<div class="profile__aside aside-profile">
+						<a href="#" class="aside-profile__link _icon-user">Персональные данные</a>
+						<a href="#" class="aside-profile__link active _icon-qr">Чеки</a>
+						<a href="#" class="aside-profile__link _icon-present">Призы</a>
+						<a href="#" class="aside-profile__link _icon-logout">Выйти</a>
+					</div>
+
+					<div class="profile__body">
+						<h1 class="profile__title title title_dark">История чеков</h1>
+						<div class="profile__wrapper">
+							<div class="profile__tabs tabs">
+								<nav class="tabs__navigation">
+									<a href="#" class="tabs__title active">Все</a>
+									<a href="#" class="tabs__title done">Принятые <span>1</span></a>
+									<a href="#" class="tabs__title reject">Отклоненные <span>1</span></a>
+								</nav>
+								<div class="tabs__content">
+									<div class="tabs__line line-tab">
+										<div class="line-tab__count">+1</div>
+										<div class="line-tab__dates">
+											<div class="line-tab__date">19.11.2024</div>
+											<div class="line-tab__date">45 000 UZS</div>
+										</div>
+										<div class="line-tab__status">Принят</div>
+										<a href="#" class="line-tab__link button button_line">Посмотреть чек</a>
+									</div>
+									<div class="tabs__line line-tab">
+										<div class="line-tab__count">+1</div>
+										<div class="line-tab__dates">
+											<div class="line-tab__date">19.11.2024</div>
+											<div class="line-tab__date">45 000 UZS</div>
+										</div>
+										<div class="line-tab__status reject">Принят</div>
+										<a href="#" class="line-tab__link button button_line">Посмотреть чек</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</section>
+
+
+		</main>
+		<!-- используй disabled для кнопок. Я сделал им состояния -->
+		<div id="login" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close _icon-close"></button>
+
+					<div class="popup__top">
+						<div class="popup__title title title_dark">Авторизация</div>
+					</div>
+
+					<div class="popup__items">
+						<a href="#" target="_blank" class="popup__item _icon-telegram">Через чат-бот Telegram</a>
+						<button class="popup__item _icon-phone" data-popup="#loginPhoneStep1">По номеру телефона</button>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div id="loginPhoneStep1" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close _icon-close"></button>
+
+					<div class="popup__top">
+						<div class="popup__title title title_dark">Авторизация</div>
+						<div class="popup__text">Введите номер для получения кода</div>
+					</div>
+
+					<form action="#" class="popup__form form">
+						<label class="form__label">
+							<div class="form__title">Введите номер телефона</div>
+							<input autocomplete="off" type="text" name="form[]" placeholder="+998" value="+998" class="form__input input">
+						</label>
+
+						<div class="form__bottom">
+							<button class="form__button button">Получить код</button>
+							<button class="form__resend">Запросить ещё раз</button>
+						</div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+
+		<div id="loginPhoneStep2" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close _icon-close"></button>
+
+					<div class="popup__top">
+						<div class="popup__title title title_dark">Авторизация</div>
+						<div class="popup__text">Введите код отправленный на номер</div>
+					</div>
+
+					<form action="#" class="popup__form form">
+						<label class="form__label">
+							<div class="form__title">Введите код</div>
+							<input autocomplete="off" type="text" name="form[]" placeholder="0000" class="form__input input">
+						</label>
+
+						<div class="form__bottom">
+							<button class="form__button button">Войти</button>
+							<button class="form__resend">Запросить ещё раз</button>
+						</div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+
+		<div id="logout" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close _icon-close"></button>
+
+					<div class="popup__top">
+						<div class="popup__title title title_dark">Вы хотите выйти?</div>
+					</div>
+
+
+					<div class="popup__buttons">
+						<button class="popup__no">Нет</button>
+						<button class="popup__button button">Да</button>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div id="qr" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close _icon-close"></button>
+					<div class="popup__qr">
+						<div class="popup__qr-icon _icon-checked"></div>
+						<div class="popup__qr-title">QR-код загружен</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20241202165804"></script>
+</body>
+
+</html>

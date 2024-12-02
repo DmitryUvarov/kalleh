@@ -47,6 +47,7 @@
 		"gulp-webpcss": "latest",
 		"gulp-zip": "latest",
 		"html-webpack-plugin": "latest",
+		"imagemin-optipng": "^8.0.0",
 		"inputmask": "latest",
 		"js-datepicker": "latest",
 		"lightgallery": "latest",
