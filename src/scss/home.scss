@@ -1,524 +1,526 @@
 //====================================================================================================
 
 .hero {
-  position: relative;
-  &__bg-ibg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
+	position: relative;
+	&__bg-ibg {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: -1;
 
-    &::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      background-color: rgba(0, 0, 0, 0.35);
-      z-index: 1;
+		img {
+			@media (max-width: $mobile) {
+				object-position: right;
+			}
+		}
+	}
 
-      @media (min-width: $mobile) {
-        display: none;
-      }
-    }
-  }
+	&__container {
+		padding-top: toRem(50);
+		padding-bottom: toRem(50);
 
-  &__container {
-    padding-top: toRem(50);
-    padding-bottom: toRem(50);
-    min-height: toRem(565);
-  }
+		@media (min-width: $mobile) {
+			min-height: toRem(565);
+		}
+	}
 
-  &__body {
-  }
+	&__body {
+		@media (max-width: $mobile) {
+			position: relative;
+			aspect-ratio: 345 / 185;
 
-  &__title {
-    font-weight: 900;
-    @include adaptiveValue("font-size", 33, 28);
-    line-height: 152%;
-    text-transform: uppercase;
-    color: #1a2026;
+			overflow: hidden;
+			border-radius: toRem(12);
+			padding: toRem(12);
+		}
+	}
 
-    @media (max-width: $mobile) {
-      text-align: center;
-      color: #fff;
-    }
-  }
+	&__title {
+		font-weight: 900;
+		@include adaptiveValue("font-size", 33, 28);
+		line-height: 152%;
+		text-transform: uppercase;
+		color: #1a2026;
+
+		@media (max-width: $mobile) {
+			@include adaptiveValue("font-size", 25, 14, 0, 767, 360);
+			max-width: 55%;
+		}
+	}
 }
 
 //====================================================================================================
 
 .participate {
-  position: relative;
-  background: linear-gradient(0, #0172bc 0%, #016fb9 100%);
+	position: relative;
+	background: linear-gradient(0, #0172bc 0%, #016fb9 100%);
 
-  &::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: toRem(150);
-    bottom: calc(100% - 1px);
-    left: 0;
-    background-image: url("@img/backgrounds/whawe-blue.svg");
-    background-repeat: repeat-x;
-    background-size: contain;
-    background-position: bottom;
-    z-index: 4;
+	&::before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: toRem(150);
+		bottom: calc(100% - 1px);
+		left: 0;
+		background-image: url("@img/backgrounds/whawe-blue.svg");
+		background-repeat: repeat-x;
+		background-size: contain;
+		background-position: bottom;
+		z-index: 4;
 
-    @media (max-width: $pc) {
-      background-size: calc(100% + 2px);
-      background-position: -1px bottom;
-    }
-  }
+		@media (max-width: $pc) {
+			background-size: calc(100% + 2px);
+			background-position: -1px bottom;
+		}
+	}
 
-  &__container {
-    @include adaptiveValue("padding-top", 50, 30);
-    @include adaptiveValue("padding-bottom", 215, 70);
-    position: relative;
-    z-index: 2;
-  }
+	&__container {
+		@include adaptiveValue("padding-top", 50, 30);
+		@include adaptiveValue("padding-bottom", 215, 70);
+		position: relative;
+		z-index: 2;
+	}
 
-  &__title {
-    text-align: center;
+	&__title {
+		text-align: center;
 
-    &:not(:last-child) {
-      margin-bottom: toRem(25);
-    }
-  }
+		&:not(:last-child) {
+			margin-bottom: toRem(25);
+		}
+	}
 
-  &__items {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(toRem(280), 1fr));
-    gap: toRem(30);
-  }
+	&__items {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(toRem(280), 1fr));
+		gap: toRem(30);
+	}
 
-  &__item {
-  }
+	&__item {
+	}
 
-  &__decore {
-  }
+	&__decore {
+	}
 }
 .title {
 }
 .item-participate {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  &__images {
-    position: relative;
-    margin-bottom: toRem(15);
-  }
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	&__images {
+		position: relative;
+		margin-bottom: toRem(15);
+	}
 
-  &__decore {
-  }
+	&__decore {
+	}
 
-  &__image {
-    img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      object-fit: contain;
-      object-position: center;
-    }
-  }
+	&__image {
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: contain;
+			object-position: center;
+		}
+	}
 
-  &__title {
-    font-weight: 800;
-    @include adaptiveValue("font-size", 24, 22);
-    line-height: 108%;
-    text-align: center;
-    color: #fff;
-    max-width: toRem(265);
+	&__title {
+		font-weight: 800;
+		@include adaptiveValue("font-size", 24, 22);
+		line-height: 108%;
+		text-align: center;
+		color: #fff;
+		max-width: toRem(265);
 
-    &:not(:last-child) {
-      margin-bottom: toRem(15);
-    }
-  }
+		&:not(:last-child) {
+			margin-bottom: toRem(15);
+		}
+	}
 
-  &__text {
-    font-weight: 500;
-    @include adaptiveValue("font-size", 18, 16);
-    line-height: 144%;
-    text-align: center;
-    color: #fff;
+	&__text {
+		font-weight: 500;
+		@include adaptiveValue("font-size", 18, 16);
+		line-height: 144%;
+		text-align: center;
+		color: #fff;
 
-    max-width: toRem(265);
-  }
+		max-width: toRem(265);
+	}
 }
 
 //========================================================================================================================================================
 
 .gift {
-  @include adaptiveValue("padding-top", 60, 30);
-  @include adaptiveValue("padding-bottom", 60, 30);
+	@include adaptiveValue("padding-top", 60, 30);
+	@include adaptiveValue("padding-bottom", 60, 30);
 
-  position: relative;
+	position: relative;
 
-  &::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: toRem(200);
-    bottom: calc(100% - 1px);
-    left: 0;
-    background-image: url("@img/backgrounds/whawe.svg");
-    background-repeat: repeat-x;
-    background-size: contain;
-    background-position: bottom;
-    z-index: 4;
+	&::before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: toRem(200);
+		bottom: calc(100% - 1px);
+		left: 0;
+		background-image: url("@img/backgrounds/whawe.svg");
+		background-repeat: repeat-x;
+		background-size: contain;
+		background-position: bottom;
+		z-index: 4;
 
-    @media (max-width: $pc) {
-      background-size: calc(100% + 2px);
-      background-position: -1px bottom;
-    }
-  }
+		@media (max-width: $pc) {
+			background-size: calc(100% + 2px);
+			background-position: -1px bottom;
+		}
+	}
 
-  &__container {
-  }
+	&__container {
+	}
 
-  &__title {
-    text-align: center;
-    color: #333333;
+	&__title {
+		text-align: center;
+		color: #333333;
 
-    &:not(:last-child) {
-      @include adaptiveValue("margin-bottom", 47, 25);
-    }
-  }
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 47, 25);
+		}
+	}
 
-  &__items {
-    gap: toRem(20);
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+	&__items {
+		gap: toRem(20);
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
 
-  &__item {
-    flex: 0 0 calc(33.33333% - 16px);
-  }
+	&__item {
+		flex: 0 0 calc(33.33333% - 16px);
+	}
 }
 
 .item-gift {
-  border-radius: 20px;
+	border-radius: 20px;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 
-  padding: toRem(20) toRem(10) toRem(15);
+	padding: toRem(20) toRem(10) toRem(15);
 
-  background-color: #d9eafc;
-  &__images {
-    position: relative;
-    margin-bottom: toRem(15);
-  }
+	background-color: #d9eafc;
+	&__images {
+		position: relative;
+		margin-bottom: toRem(15);
+	}
 
-  &__decore {
-  }
+	&__decore {
+	}
 
-  &__image {
-    img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      object-fit: contain;
-      object-position: center;
-    }
-  }
+	&__image {
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: contain;
+			object-position: center;
+		}
+	}
 
-  &__count {
-    position: absolute;
-    width: 67px;
-    height: 67px;
-    top: toRem(14);
-    right: 0;
+	&__count {
+		position: absolute;
+		width: 67px;
+		height: 67px;
+		top: toRem(14);
+		right: 0;
 
-    font-weight: 700;
-    font-size: 23px;
-    line-height: 113%;
-    text-align: center;
-    color: #333;
-    background-color: #ffd300;
-    border: 3px solid #fff;
-    border-radius: 50%;
+		font-weight: 700;
+		font-size: 23px;
+		line-height: 113%;
+		text-align: center;
+		color: #333;
+		background-color: #ffd300;
+		border: 3px solid #fff;
+		border-radius: 50%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
 
-  &__title {
-    font-weight: 600;
-    @include adaptiveValue("font-size", 24, 22);
-    line-height: 108%;
-    text-align: center;
-    color: #1a2026;
-    flex: 1 1 auto;
-    &:not(:last-child) {
-      @include adaptiveValue("margin-bottom", 35, 20);
-    }
-  }
+	&__title {
+		font-weight: 600;
+		@include adaptiveValue("font-size", 24, 22);
+		line-height: 108%;
+		text-align: center;
+		color: #1a2026;
+		flex: 1 1 auto;
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 35, 20);
+		}
+	}
 
-  &__link {
-    width: 100%;
-  }
+	&__link {
+		width: 100%;
+	}
 }
 
 //========================================================================================================================================================
 
 .products {
-  position: relative;
+	position: relative;
 
-  @include adaptiveValue("padding-top", 215, 120);
-  @include adaptiveValue("padding-bottom", 115, 30);
+	@include adaptiveValue("padding-top", 215, 120);
+	@include adaptiveValue("padding-bottom", 115, 30);
 
-  &__bg-ibg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
+	&__bg-ibg {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: -1;
 
-    img {
-      object-position: top center;
-    }
-  }
+		img {
+			object-position: top center;
+		}
+	}
 
-  &__container {
-  }
+	&__container {
+	}
 
-  &__top {
-    &:not(:last-child) {
-      @include adaptiveValue("margin-bottom", 45, 20);
-    }
-  }
+	&__top {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 45, 20);
+		}
+	}
 
-  &__title {
-    text-align: center;
-  }
+	&__title {
+		text-align: center;
+	}
 
-  &__navigation {
-    @media (min-width: $mobile) {
-      position: absolute;
-      width: 100%;
-      justify-content: space-between;
+	&__navigation {
+		@media (min-width: $mobile) {
+			position: absolute;
+			width: 100%;
+			justify-content: space-between;
 
-      top: toRem(92.5);
-    }
-    @media (max-width: $mobile) {
-      justify-content: center;
-      margin-top: toRem(25);
-    }
-  }
+			top: toRem(92.5);
+		}
+		@media (max-width: $mobile) {
+			justify-content: center;
+			margin-top: toRem(25);
+		}
+	}
 
-  &__slider {
-    position: relative;
+	&__slider {
+		position: relative;
 
-    @media (min-width: $mobile) {
-      overflow: hidden;
-    }
-  }
+		@media (min-width: $mobile) {
+			overflow: hidden;
+		}
+	}
 
-  &__wrapper {
-  }
+	&__wrapper {
+	}
 
-  &__slide {
-  }
+	&__slide {
+	}
 
-  &__decore {
-  }
+	&__decore {
+	}
 }
 
 .item-products {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  &__images {
-    position: relative;
-    margin-bottom: toRem(15);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	&__images {
+		position: relative;
+		margin-bottom: toRem(15);
 
-    max-width: toRem(335);
-  }
+		max-width: toRem(335);
+	}
 
-  &__decore {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    img {
-      max-width: 100%;
-    }
-  }
+	&__decore {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		img {
+			max-width: 100%;
+		}
+	}
 
-  &__image {
-    img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      object-fit: contain;
-      object-position: center;
-    }
-  }
+	&__image {
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: contain;
+			object-position: center;
+		}
+	}
 
-  &__title {
-    font-weight: 600;
-    font-size: 22px;
-    line-height: 118%;
-    text-align: center;
-    color: #fff;
+	&__title {
+		font-weight: 600;
+		font-size: 22px;
+		line-height: 118%;
+		text-align: center;
+		color: #fff;
 
-    max-width: toRem(250);
-  }
+		max-width: toRem(250);
+	}
 }
 
 //========================================================================================================================================================
 
 .faq {
-  @include adaptiveValue("padding-top", 150, 30);
-  @include adaptiveValue("padding-bottom", 120, 30);
-  position: relative;
-  &__container {
-    max-width: toRem(705);
-  }
+	@include adaptiveValue("padding-top", 150, 30);
+	@include adaptiveValue("padding-bottom", 120, 30);
+	position: relative;
+	&__container {
+		max-width: toRem(705);
+	}
 
-  &__title {
-    color: #333;
-    text-align: center;
+	&__title {
+		color: #333;
+		text-align: center;
 
-    &:not(:last-child) {
-      @include adaptiveValue("margin-bottom", 45, 20);
-    }
-  }
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 45, 20);
+		}
+	}
 
-  &__spollers {
-  }
+	&__spollers {
+	}
 
-  &__decore {
-  }
+	&__decore {
+	}
 }
 
 //========================================================================================================================================================
 .bottom {
-  @include adaptiveValue("padding-top", 140, 130);
-  @include adaptiveValue("padding-bottom", 320, 150);
-  position: relative;
+	@include adaptiveValue("padding-top", 140, 130);
+	@include adaptiveValue("padding-bottom", 320, 150);
+	position: relative;
 
-  &::before {
-    content: "";
-    background-image: url("@img/backgrounds/milk.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: bottom;
-    background-size: 100%;
+	&::before {
+		content: "";
+		background-image: url("@img/backgrounds/milk.png");
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: bottom;
+		background-size: 100%;
 
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    // height: toRem(310);
-  }
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		// height: toRem(310);
+	}
 
-  &__bg-ibg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
+	&__bg-ibg {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: -1;
 
-    img {
-      object-position: top center;
-    }
-  }
-  &__container {
-    position: relative;
-    z-index: 2;
+		img {
+			object-position: top center;
+		}
+	}
+	&__container {
+		position: relative;
+		z-index: 2;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 
-  &__title {
-    text-align: center;
-    &:not(:last-child) {
-      @include adaptiveValue("margin-bottom", 80, 30);
-    }
-  }
+	&__title {
+		text-align: center;
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 80, 30);
+		}
+	}
 
-  &__counter {
-    &:not(:last-child) {
-      @include adaptiveValue("margin-bottom", 60, 30);
-    }
-  }
+	&__counter {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 60, 30);
+		}
+	}
 
-  &__button {
-    max-width: toRem(320);
-    width: 100%;
-  }
+	&__button {
+		max-width: toRem(320);
+		width: 100%;
+	}
 
-  &__decore {
-  }
+	&__decore {
+	}
 }
 
 .counter {
-  display: flex;
-  justify-content: center;
-  @include adaptiveValue("gap", 90, 30);
-  &__item {
-    &:not(:last-child) {
-      .counter__num::before {
-        content: "";
-        width: toRem(20);
-        aspect-ratio: 20 / 48;
-        background-image: url("@img/backgrounds/dots.svg");
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
+	display: flex;
+	justify-content: center;
+	@include adaptiveValue("gap", 90, 30);
+	&__item {
+		&:not(:last-child) {
+			.counter__num::before {
+				content: "";
+				width: toRem(20);
+				aspect-ratio: 20 / 48;
+				background-image: url("@img/backgrounds/dots.svg");
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-position: center;
 
-        position: absolute;
-        top: 50%;
-        @include adaptiveValue("right", -50, -25);
-        transform: translateY(-50%);
-      }
-    }
-  }
+				position: absolute;
+				top: 50%;
+				@include adaptiveValue("right", -50, -25);
+				transform: translateY(-50%);
+			}
+		}
+	}
 
-  &__num {
-    position: relative;
-    background-color: #f8f8f8;
-    @include adaptiveValue("width", 110, 90);
-    @include adaptiveValue("height", 110, 90);
-    border-radius: 50%;
+	&__num {
+		position: relative;
+		background-color: #f8f8f8;
+		@include adaptiveValue("width", 110, 90);
+		@include adaptiveValue("height", 110, 90);
+		border-radius: 50%;
 
-    font-weight: 700;
-    @include adaptiveValue("font-size", 70, 50);
-    line-height: 57%;
-    text-align: center;
-    color: #014d97;
+		font-weight: 700;
+		@include adaptiveValue("font-size", 70, 50);
+		line-height: 57%;
+		text-align: center;
+		color: #014d97;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
-    margin-bottom: toRem(15);
-  }
+		margin-bottom: toRem(15);
+	}
 
-  &__title {
-    font-weight: 700;
-    @include adaptiveValue("font-size", 22, 18);
-    line-height: 118%;
-    text-align: center;
-    color: #fff;
-  }
+	&__title {
+		font-weight: 700;
+		@include adaptiveValue("font-size", 22, 18);
+		line-height: 118%;
+		text-align: center;
+		color: #fff;
+	}
 }
